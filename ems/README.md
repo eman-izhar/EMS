@@ -1,16 +1,106 @@
-# React + Vite
+# Employee Management System (EMS)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive web application for managing employees and their tasks. Built with React and Vite for fast development and optimized performance.
 
-Currently, two official plugins are available:
+## 📋 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **User Authentication** - Secure login system with role-based access
+- **Admin Dashboard** - Centralized management interface for administrators
+- **Employee Dashboard** - Personalized view for employees to manage their tasks
+- **Task Management** - Create, assign, and track tasks with multiple statuses
+  - New Tasks
+  - Accepted Tasks
+  - Completed Tasks
+  - Failed Tasks
+- **Real-time Updates** - Context-based state management for seamless data flow
+- **Local Storage** - Persistent data storage for tasks and user information
+- **Responsive Design** - Works seamlessly on desktop and mobile devices
 
-## React Compiler
+## 🏗️ Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+src/
+├── components/
+│   ├── Auth/
+│   │   ├── Login.jsx              # Login page component
+│   │   └── Dashboard/
+│   │       ├── AdminDashboard.jsx # Admin interface
+│   │       └── EmployeeDashboard.jsx # Employee interface
+│   ├── Others/
+│   │   ├── Header.jsx             # Navigation header
+│   │   └── TaskListNumbers.jsx    # Task statistics display
+│   └── Tasklist/
+│       ├── AcceptTask.jsx         # Accepted tasks view
+│       ├── CompleteTask.jsx       # Completed tasks view
+│       ├── FailedTask.jsx         # Failed tasks view
+│       └── NewTask.jsx            # New tasks view
+├── context/
+│   ├── AuthContext.jsx            # Authentication state management
+│   └── TaskContext.jsx            # Task state management
+├── utils/
+│   └── LocalStorage.jsx           # Local storage utilities
+├── App.jsx                        # Main application component
+└── main.jsx                       # Application entry point
+```
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React** - UI library for building interactive components
+- **Vite** - Next-generation frontend build tool for fast development
+- **Context API** - State management for authentication and tasks
+- **CSS** - Styling for responsive design
+- **ESLint** - Code quality and consistency
+
+## 📦 Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd ems
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+## 🚀 Running the Project
+
+### Development Server
+```bash
+npm run dev
+```
+The application will start at `http://localhost:5173` with hot module replacement (HMR).
+
+### Build for Production
+```bash
+npm run build
+```
+
+### Preview Production Build
+```bash
+npm run preview
+```
+
+## 💡 Usage
+
+1. **Login** - Start by logging in with your credentials on the Login page
+2. **Admin Access** - Admins can access the Admin Dashboard to manage all employees and tasks
+3. **Employee Access** - Employees can view their assigned tasks and update task status
+4. **Task Management** - Tasks can be created, accepted, completed, or marked as failed
+5. **Data Persistence** - All changes are automatically saved to local storage
+
+## 📝 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint to check code quality
+
+## 🤝 Contributing
+
+Feel free to submit issues and enhancement requests!
+
+## 📄 License
+
+This project is open source and available under the MIT License.
