@@ -2,9 +2,22 @@ import React from 'react'
 
 const TaskListNumbers = () => {
   return (
-    <div className='flex h-screen justify-between gap-5 '>
-      <div className='H-40 w-1/2 bg-amber-300'>
-
+    <div className='flex mt-10  screen justify-between gap-5 '>
+      <div className='rounded-xl w-[45%] py-6 px-9 bg-amber-300'>
+    <h2 className='text-3xl font-semibold'>0</h2>
+    <h3 className='text-xl font-medium'>New Task</h3>
+      </div>
+      <div className='rounded-xl w-[45%] py-6 px-9 bg-blue-300'>
+    <h2 className='text-3xl font-semibold'>0</h2>
+    <h3 className='text-xl font-medium'>New Task</h3>
+      </div>
+      <div className='rounded-xl w-[45%] py-6 px-9 bg-green-300'>
+    <h2 className='text-3xl font-semibold'>0</h2>
+    <h3 className='text-xl font-medium'>New Task</h3>
+      </div>
+      <div className='rounded-xl w-[45%] py-6 px-9 bg-purple-300'>
+    <h2 className='text-3xl font-semibold'>0</h2>
+    <h3 className='text-xl font-medium'>New Task</h3>
       </div>
     </div>
   )
