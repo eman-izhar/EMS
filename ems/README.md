@@ -4,43 +4,83 @@ A modern, responsive web application for managing employees and their tasks. Bui
 
 ## 📋 Features
 
-- **User Authentication** - Secure login system with role-based access
-- **Admin Dashboard** - Centralized management interface for administrators
+- **User Authentication** - Secure login system with role-based access control
+  - Role-based dashboard routing (Admin vs Employee)
+  - Session persistence with local storage
+  
+- **Admin Dashboard** - Comprehensive management interface for administrators
+  - View all employees and their task assignments
+  - Create and assign new tasks to employees
+  - Monitor task completion and status updates
+  - Real-time visibility into system-wide task statistics
+  
 - **Employee Dashboard** - Personalized view for employees to manage their tasks
-- **Task Management** - Create, assign, and track tasks with multiple statuses
-  - New Tasks
-  - Accepted Tasks
-  - Completed Tasks
-  - Failed Tasks
-- **Real-time Updates** - Context-based state management for seamless data flow
-- **Local Storage** - Persistent data storage for tasks and user information
-- **Responsive Design** - Works seamlessly on desktop and mobile devices
+  - View assigned tasks with detailed information
+  - Accept or reject task assignments
+  - Mark tasks as complete or failed
+  - Track personal task statistics
+  
+- **Task Management** - Comprehensive task lifecycle management
+  - **New Tasks** - Tasks awaiting employee action
+  - **Accepted Tasks** - Tasks currently in progress
+  - **Completed Tasks** - Successfully finished tasks
+  - **Failed Tasks** - Tasks marked as unsuccessful
+  - Task statistics summary for quick overview
+  
+- **State Management** - Context API-based architecture
+  - Centralized authentication state management
+  - Real-time task state synchronization
+  - Seamless data flow across components
+  
+- **Data Persistence** - Reliable local storage implementation
+  - Automatic data backup to browser local storage
+  - Session persistence across page refreshes
+  - User and task data preservation
+  
+- **Responsive Design** - Mobile-friendly interface
+  - Optimized layouts for all device sizes
+  - Touch-friendly interactions
+  - Seamless experience on desktop and mobile
 
 ## 🏗️ Project Structure
 
 ```
-src/
-├── components/
-│   ├── Auth/
-│   │   ├── Login.jsx              # Login page component
-│   │   └── Dashboard/
-│   │       ├── AdminDashboard.jsx # Admin interface
-│   │       └── EmployeeDashboard.jsx # Employee interface
-│   ├── Others/
-│   │   ├── Header.jsx             # Navigation header
-│   │   └── TaskListNumbers.jsx    # Task statistics display
-│   └── Tasklist/
-│       ├── AcceptTask.jsx         # Accepted tasks view
-│       ├── CompleteTask.jsx       # Completed tasks view
-│       ├── FailedTask.jsx         # Failed tasks view
-│       └── NewTask.jsx            # New tasks view
-├── context/
-│   ├── AuthContext.jsx            # Authentication state management
-│   └── TaskContext.jsx            # Task state management
-├── utils/
-│   └── LocalStorage.jsx           # Local storage utilities
-├── App.jsx                        # Main application component
-└── main.jsx                       # Application entry point
+ems/
+├── public/                        # Static assets served publicly
+├── src/
+│   ├── assets/                    # Images, fonts, and other media
+│   ├── components/
+│   │   ├── Auth/
+│   │   │   ├── Login.jsx          # Login page component
+│   │   │   ├── Dashboard/
+│   │   │   │   ├── AdminDashboard.jsx      # Admin management interface
+│   │   │   │   └── EmployeeDashboard.jsx  # Employee task dashboard
+│   │   │   └── Others/
+│   │   │       ├── Header.jsx             # Navigation header component
+│   │   │       ├── TaskListNumbers.jsx    # Task statistics display
+│   │   │       ├── AllTasks.jsx           # Complete task listing
+│   │   │       └── Createtask.jsx         # Task creation form
+│   │   └── Tasklist/
+│   │       ├── Tasklist.jsx       # Main task list container
+│   │       ├── NewTask.jsx        # New tasks view
+│   │       ├── AcceptTask.jsx     # Accepted tasks view
+│   │       ├── Completetask.jsx   # Completed tasks view
+│   │       └── FailedTask.jsx     # Failed tasks view
+│   ├── context/
+│   │   ├── Authcontext.jsx        # Authentication state management
+│   │   └── Taskcontext.jsx        # Task state management
+│   ├── pages/                     # Page-level components
+│   ├── utils/
+│   │   └── Localstorage.jsx       # Local storage helper functions
+│   ├── App.jsx                    # Root application component
+│   ├── main.jsx                   # Application entry point
+│   ├── App.css                    # Global application styles
+│   └── index.css                  # Base styling and resets
+├── index.html                     # HTML entry point
+├── package.json                   # Project dependencies and scripts
+├── vite.config.js                 # Vite configuration
+├── eslint.config.js               # ESLint rules and configuration
+└── README.md                      # This file
 ```
 
 ## 🛠️ Tech Stack
@@ -53,16 +93,33 @@ src/
 
 ## 📦 Installation
 
-1. Clone the repository:
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn package manager
+
+### Setup Steps
+
+1. **Clone the repository:**
 ```bash
 git clone <repository-url>
 cd ems
 ```
 
-2. Install dependencies:
+2. **Install dependencies:**
 ```bash
 npm install
 ```
+
+3. **Configure local storage data** (Optional):
+   - The application uses browser local storage for data persistence
+   - Initial data will be created on first login
+   - Check `src/utils/Localstorage.jsx` for storage configuration
+
+4. **Verify the installation:**
+```bash
+npm run lint
+```
+This ensures all code meets the quality standards.
 
 ## 🚀 Running the Project
 
